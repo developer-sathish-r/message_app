@@ -1,0 +1,30 @@
+.login {
+    background-color: #8fd08c;
+    border-radius: 10px;
+    padding: 10px 70px;
+    margin-top: 130px;
+    text-align: center;
+    width: 600px;
+  }
+  
+  .forget_password {
+    padding-left: 190px;
+    margin: 0;
+  }
+  
+  .login-btn {
+    background-color: black;
+    border-radius: 5px;
+    width: 310px;
+  }
+  
+  .submit-btn {
+    background-color: black;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 1px;
+  }
+  
+  .sign-up {
+    margin: 40px 0px;
+  }

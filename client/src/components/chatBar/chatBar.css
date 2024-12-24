@@ -1,0 +1,25 @@
+.chat {
+    width: 100%;
+    margin: 2px;
+    padding: 5px;
+    height: 100vh;
+    display: flex;
+    background-color: rgb(213, 212, 212);
+  }
+
+  .group{
+    font-size: larger;
+    margin: 0;
+    padding: 0;
+  }
+
+  .group-name{
+    font-size: 15px;
+    margin: auto;
+  }
+
+  .group-profile{
+    width: 50px;
+    background-color: white;
+    border-radius: 20px;
+  }
