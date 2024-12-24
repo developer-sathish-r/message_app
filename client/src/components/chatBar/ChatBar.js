@@ -35,12 +35,8 @@ const ChatBar = ({ socket }) => {
       .catch((error) => console.error('Error fetching users:', error));
   }, [Token]);
 
-
-
-
   useEffect(() => {
     if (socket) {
-      console.log('Socket connection established:', socket);
       socket.emit('register', Token._id);
     }
   }, [socket, Token]);
@@ -49,20 +45,11 @@ const ChatBar = ({ socket }) => {
     <>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div className="chat__sidebar">
-          {/* <h2>
-          <img className="chatbar-profile" src={Token.file} alt="Profile" />
-          {Token.firstname} {Token.lastname}
-        </h2> */}
 
           <div className="search-bar">
             <input type="text" placeholder="Search Contact" />
           </div>
-
-
-          {/* <p>{Token.email}</p> */}
-
           <div>
-            {/* <h4 className="chat__header">ACTIVE USERS</h4> */}
             <div className="chat__users">
               {users.map((user) => (
                 <div key={user._id} style={{ display: 'flex' }}>
@@ -79,31 +66,12 @@ const ChatBar = ({ socket }) => {
                       )
                     }
                   >
-                   <h3>{user.firstname} {user.lastname}</h3> 
+                    <h3>{user.firstname} {user.lastname}</h3>
                   </button>
                 </div>
               ))}
             </div>
           </div>
-
-
-          {/* <div className="groups-section">
-          <h5 className='group'>Groups(5)</h5>
-          <div>
-
-
-          <img className="group-profile" src={icon} alt="User" />
-          </div>
-          <div className="group">App Development</div>
-        
-          <div className="group">UI/UX Designers</div>
-          
-          <div className="group">Java Development</div>
-        
-          <div className="group">Python Development</div>
-
-        </div>  */}
-
 
         </div>
 
@@ -112,33 +80,25 @@ const ChatBar = ({ socket }) => {
 
           <div className="groups-section">
             <h5 className='group' >Groups(5)</h5>
-            <div  style={{ display: 'flex'}}>
+            <div style={{ display: 'flex' }}>
               <div> <img className="group-profile" src={icon} alt="User" /></div>
               <div className="group-name">App Developer</div>
             </div>
           </div>
 
+          <div style={{ display: 'flex' }}>
+            <div> <img className="group-profile" src={java} alt="User" /></div>
+            <div className="group-name">Java Developer</div>
+          </div>
 
-      
-            <div  style={{ display: 'flex'}}>
-              <div> <img className="group-profile" src={java} alt="User" /></div>
-              <div className="group-name">Java Developer</div>
-            </div>
-
-
-            <div  style={{ display: 'flex'}}>
-              <div> <img className="group-profile" src={python} alt="User" /></div>
-              <div className="group-name">Python Developer</div>
-            </div>
-     
-
-
+          <div style={{ display: 'flex' }}>
+            <div> <img className="group-profile" src={python} alt="User" /></div>
+            <div className="group-name">Python Developer</div>
+          </div>
 
         </div>
 
       </div>
-
-
 
       <div className="chat__main">
         {selectedUser ? (
@@ -153,9 +113,6 @@ const ChatBar = ({ socket }) => {
           <img src={image} width="125%" height="100%" alt="Background" />
         )}
       </div>
-
-
-
     </>
   );
 };

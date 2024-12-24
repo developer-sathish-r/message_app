@@ -26,7 +26,6 @@ const Register = () => {
       reader.onerror = (error) => reject(error);
     });
 
-
   //Register
   const onFinish = (values) => {
     (async () =>
@@ -167,7 +166,6 @@ const Register = () => {
                 //   message: 'Please upload imgage file format only'   
                  }
             <Form.Item
-              // className='input_field'
               label={<label style={{ color: "black" }}>Profile photo</label>}
               name="file"
               rules={[{

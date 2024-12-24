@@ -26,7 +26,6 @@ const Login = () => {
        
             if (rawResponse.data.success) {
                 const value = rawResponse.data;
-               // socket.emit('newUser', { socketID: socket.id });
 
              //Login success notification ...!
                 notification.success(

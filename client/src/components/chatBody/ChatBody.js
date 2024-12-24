@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BsThreeDotsVertical } from "react-icons/bs";
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogout } from '../../redux/actionCreate';
 import { notification, Menu, Button } from 'antd';
@@ -24,8 +23,6 @@ const ChatBody = ({ chat, token, profile, receiverID, socket }) => {
     const [typing, setTyping] = useState(false);
     const [senderTyping, setSenderTyping] = useState(false);
     const [receiverTyping, setReceiverTyping] = useState(false);
-
-    console.log("sender", sender_profile)
 
     // Fetch messages
     const fetchMessages = async () => {
@@ -101,7 +98,6 @@ const ChatBody = ({ chat, token, profile, receiverID, socket }) => {
 
             } else {
                 const error = await response.json();
-                console.error('Error sending message:', error);
             }
         } catch (error) {
             console.error('Error sending message:', error);
@@ -138,16 +134,14 @@ const ChatBody = ({ chat, token, profile, receiverID, socket }) => {
     useEffect(() => {
         socket.emit('register', tokenID);
 
-        // Listen for typing event
+        //typing event
         socket.on('typing', (data) => {
             if (data.to === tokenID) {
-
-                // Show typing indicator
                 setTyping(true);
             }
         });
 
-        // Listen for stop typing event
+        // stop typing event
         socket.on('stopTyping', (data) => {
            
             if (data.to === tokenID) {
@@ -240,7 +234,6 @@ const ChatBody = ({ chat, token, profile, receiverID, socket }) => {
                                                 </div>
                                             )}
                                         </div>
-                                        {/* <p className="sender__time" >{msg.timestamp}</p> */}
                                     </div>
                                 )
                                     :
@@ -273,7 +266,6 @@ const ChatBody = ({ chat, token, profile, receiverID, socket }) => {
                                                     </div>
                                                 )}
                                             </div>
-                                            {/* <p className="message__chats_recipient" >{msg.timestamp}</p> */}
                                         </div>
                                     )
                             ))}
